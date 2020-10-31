@@ -12,8 +12,8 @@ public class Payment {
     @GeneratedValue(strategy=GenerationType.AUTO)
     private Long id;
     private String rcptDate;
-    private String rcptSeq;
-    private String amt;
+    private Integer rcptSeq;
+    private Integer amt;
     private String stat;
 
     @PrePersist
@@ -39,29 +39,28 @@ public class Payment {
     public void setRcptDate(String rcptDate) {
         this.rcptDate = rcptDate;
     }
-    public String getRcptSeq() {
+
+    public String getStat() {
+        return stat;
+    }
+
+    public Integer getRcptSeq() {
         return rcptSeq;
     }
 
-    public void setRcptSeq(String rcptSeq) {
+    public void setRcptSeq(Integer rcptSeq) {
         this.rcptSeq = rcptSeq;
-    }
-    public String getAmt() {
-        return amt;
-    }
-
-    public void setAmt(String amt) {
-        this.amt = amt;
-    }
-    public String getStat() {
-        return stat;
     }
 
     public void setStat(String stat) {
         this.stat = stat;
     }
 
+    public Integer getAmt() {
+        return amt;
+    }
 
-
-
+    public void setAmt(Integer amt) {
+        this.amt = amt;
+    }
 }
